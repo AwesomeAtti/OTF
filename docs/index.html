@@ -117,14 +117,14 @@
     }
 
     .hero__chainsaw {
-      font-size: 96px;
       display: block;
       margin: 0 auto 24px;
-      animation: spin 4s linear infinite;
+      width: 220px;
+      height: 220px;
+      object-fit: contain;
+      animation: spin 6s linear infinite;
       cursor: default;
-      width: fit-content;
-      filter: drop-shadow(0 0 24px rgba(217,165,52,0.5));
-      transition: animation-play-state 0.1s;
+      filter: drop-shadow(0 0 32px rgba(217,165,52,0.55));
     }
     .hero__chainsaw:hover { animation-play-state: paused; }
 
@@ -393,7 +393,7 @@
 <body>
 
 <nav>
-  <a class="nav__logo" href="#">⛓️ The OTF Archives</a>
+  <a class="nav__logo" href="#"><img src="golden_chainsaw.png" alt="" style="height:18px;width:auto;vertical-align:middle;margin-right:6px;display:inline-block;" />The OTF Archives</a>
   <a class="nav__cta" href="#install">Install (it's free)</a>
 </nav>
 
@@ -401,7 +401,7 @@
 <section class="hero">
   <div class="container">
     <div class="hero__eyebrow">Chrome Extension · Completely Free · Probably Fine</div>
-    <span class="hero__chainsaw" title="hover to pause (you earned it)">⛓️</span>
+    <img class="hero__chainsaw" src="golden_chainsaw.png" alt="The Golden Chainsaw" title="hover to pause · you have earned this moment of stillness" />
     <p class="hero__chainsaw-caption">hover to pause · you have earned this moment of stillness</p>
     <h1 class="hero__title display">The <span>OTF</span> Archives</h1>
     <p class="hero__subtitle">
@@ -502,7 +502,7 @@
           <div class="step__body">
             Click the button below and save the <code>.zip</code> file somewhere you will remember. Your Downloads folder. Your Desktop. A folder called "definitely not a virus". Whatever works.
             <br><br>
-            <a class="btn btn--primary" href="the-otf-archives.zip" download>Download the-otf-archives.zip</a>
+            <a class="btn btn--primary" href="the-otf-archives-v0.4.0.zip" download>Download the-otf-archives-v0.4.0.zip</a>
             <br>
             <span class="step__note">It's small. Smaller than a photo of your lunch. You'll be fine.</span>
           </div>
