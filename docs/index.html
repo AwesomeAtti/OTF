@@ -221,9 +221,9 @@
 
     .tier {
       display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      padding: 20px;
+      flex-direction: column;
+      gap: 4px;
+      padding: 16px 20px;
       background: var(--panel);
       border: 1px solid var(--border);
       border-radius: 12px;
@@ -241,16 +241,25 @@
       font-size: 13px;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      white-space: nowrap;
-      min-width: 130px;
     }
     .tier--legendary .tier__label { color: var(--gold); }
     .tier--rare      .tier__label { color: var(--blue); }
     .tier--uncommon  .tier__label { color: var(--green); }
     .tier--common    .tier__label { color: var(--gray); }
 
-    .tier__body { font-size: 14px; color: var(--muted); }
-    .tier__body strong { color: var(--text); display: block; margin-bottom: 2px; font-size: 15px; }
+    .tier__name {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      margin-top: 2px;
+    }
+
+    .tier__desc {
+      font-size: 14px;
+      color: var(--muted);
+      margin-top: 2px;
+      line-height: 1.5;
+    }
 
     /* ── Install steps ── */
     .steps { counter-reset: steps; }
@@ -458,31 +467,23 @@
 
     <div class="tier tier--legendary">
       <div class="tier__label">OTF History</div>
-      <div class="tier__body">
-        <strong>Legendary</strong>
-        Ancient relics of forum mythology. Two exist. Neither has ever been confirmed. Good luck.
-      </div>
+      <div class="tier__name">Legendary</div>
+      <div class="tier__desc">Ancient relics of forum mythology. Two exist. Neither has ever been confirmed. Good luck.</div>
     </div>
     <div class="tier tier--rare">
       <div class="tier__label">Deep Lore</div>
-      <div class="tier__body">
-        <strong>Rare</strong>
-        Items of great significance to exactly the kind of person reading this page right now.
-      </div>
+      <div class="tier__name">Rare</div>
+      <div class="tier__desc">Items of great significance to exactly the kind of person reading this page right now.</div>
     </div>
     <div class="tier tier--uncommon">
       <div class="tier__label">Touch Grass Moments</div>
-      <div class="tier__body">
-        <strong>Uncommon</strong>
-        Commemorating the brief periods when OTFers almost went outside.
-      </div>
+      <div class="tier__name">Uncommon</div>
+      <div class="tier__desc">Commemorating the brief periods when OTFers almost went outside.</div>
     </div>
     <div class="tier tier--common">
       <div class="tier__label">Skill Issues</div>
-      <div class="tier__body">
-        <strong>Common</strong>
-        You will find many of these. They are yours now. Please take them.
-      </div>
+      <div class="tier__name">Common</div>
+      <div class="tier__desc">You will find many of these. They are yours now. Please take them.</div>
     </div>
   </div>
 </section>
