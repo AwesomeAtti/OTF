@@ -34,7 +34,6 @@
       overflow-x: hidden;
     }
 
-    /* ── Typography ── */
     .display {
       font-family: 'Syne', sans-serif;
       font-weight: 800;
@@ -42,7 +41,6 @@
       letter-spacing: -0.02em;
     }
 
-    /* ── Layout ── */
     .container {
       max-width: 780px;
       margin: 0 auto;
@@ -71,6 +69,13 @@
       font-size: 15px;
       color: var(--gold);
       text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav__logo img {
+      height: 20px;
+      width: auto;
     }
     .nav__cta {
       font-size: 13px;
@@ -118,9 +123,9 @@
 
     .hero__chainsaw {
       display: block;
-      margin: 0 auto 24px;
-      width: 220px;
-      height: 220px;
+      margin: 0 auto 16px;
+      width: 200px;
+      height: 200px;
       object-fit: contain;
       animation: spin 6s linear infinite;
       cursor: default;
@@ -136,7 +141,6 @@
     .hero__chainsaw-caption {
       font-size: 11px;
       color: var(--muted);
-      margin-top: -16px;
       margin-bottom: 28px;
       font-style: italic;
     }
@@ -182,10 +186,11 @@
 
     /* ── What is this ── */
     .what__intro {
-      font-size: 20px;
+      font-size: 18px;
       color: var(--muted);
       margin-bottom: 40px;
       max-width: 600px;
+      line-height: 1.6;
     }
     .what__intro strong { color: var(--text); }
 
@@ -193,7 +198,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       gap: 16px;
-      margin-top: 40px;
     }
 
     .what__card {
@@ -217,6 +221,7 @@
       color: var(--muted);
       margin-bottom: 32px;
       max-width: 580px;
+      line-height: 1.6;
     }
 
     .tier {
@@ -238,9 +243,9 @@
     .tier__label {
       font-family: 'Syne', sans-serif;
       font-weight: 800;
-      font-size: 13px;
+      font-size: 11px;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.1em;
     }
     .tier--legendary .tier__label { color: var(--gold); }
     .tier--rare      .tier__label { color: var(--blue); }
@@ -248,22 +253,19 @@
     .tier--common    .tier__label { color: var(--gray); }
 
     .tier__name {
-      font-size: 15px;
-      font-weight: 600;
+      font-family: 'Syne', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
       color: var(--text);
-      margin-top: 2px;
     }
 
     .tier__desc {
       font-size: 14px;
       color: var(--muted);
-      margin-top: 2px;
       line-height: 1.5;
     }
 
     /* ── Install steps ── */
-    .steps { counter-reset: steps; }
-
     .step {
       display: grid;
       grid-template-columns: 48px 1fr;
@@ -273,7 +275,6 @@
     }
 
     .step__num {
-      counter-increment: steps;
       width: 48px;
       height: 48px;
       border-radius: 50%;
@@ -289,14 +290,13 @@
       flex-shrink: 0;
     }
 
-    .step__content {}
     .step__title {
       font-family: 'Syne', sans-serif;
       font-weight: 700;
       font-size: 18px;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
-    .step__body { font-size: 14px; color: var(--muted); line-height: 1.6; }
+    .step__body { font-size: 14px; color: var(--muted); line-height: 1.7; }
     .step__body strong { color: var(--text); }
     .step__body code {
       font-family: monospace;
@@ -307,8 +307,8 @@
       color: var(--gold-light);
     }
     .step__note {
-      display: inline-block;
-      margin-top: 10px;
+      display: block;
+      margin-top: 12px;
       font-size: 12px;
       font-style: italic;
       color: var(--muted);
@@ -321,8 +321,8 @@
     /* ── Rules ── */
     .rules__list {
       list-style: none;
-      counter-reset: rules;
       margin: 32px 0;
+      counter-reset: rules;
     }
     .rules__list li {
       counter-increment: rules;
@@ -347,7 +347,7 @@
       font-size: 13px;
       color: var(--muted);
       margin-top: 24px;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     /* ── Disclaimer ── */
@@ -361,17 +361,6 @@
       line-height: 1.7;
     }
     .disclaimer strong { color: var(--text); }
-
-    /* ── Footer ── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 40px 24px;
-      text-align: center;
-      font-size: 12px;
-      color: var(--muted);
-      line-height: 1.8;
-    }
-    footer a { color: var(--muted); text-decoration: underline; }
 
     /* ── Section headings ── */
     .section-eyebrow {
@@ -387,11 +376,20 @@
       margin-bottom: 20px;
     }
 
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 24px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
     /* ── Responsive ── */
     @media (max-width: 520px) {
       .hero { padding: 60px 0 60px; }
-      .tier { flex-direction: column; gap: 8px; }
-      .tier__label { min-width: unset; }
+      .step { grid-template-columns: 36px 1fr; gap: 12px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -402,16 +400,19 @@
 <body>
 
 <nav>
-  <a class="nav__logo" href="#"><img src="golden_chainsaw.png" alt="" style="height:18px;width:auto;vertical-align:middle;margin-right:6px;display:inline-block;" />The OTF Archives</a>
+  <a class="nav__logo" href="#">
+    <img src="golden_chainsaw.png" alt="" />
+    The OTF Archives
+  </a>
   <a class="nav__cta" href="#install">Install (it's free)</a>
 </nav>
 
-<!-- ── HERO ── -->
+<!-- HERO -->
 <section class="hero">
   <div class="container">
-    <div class="hero__eyebrow">Chrome Extension · Completely Free · Probably Fine</div>
-    <img class="hero__chainsaw" src="golden_chainsaw.png" alt="The Golden Chainsaw" title="hover to pause · you have earned this moment of stillness" />
-    <p class="hero__chainsaw-caption">hover to pause · you have earned this moment of stillness</p>
+    <div class="hero__eyebrow">Chrome Extension &middot; Completely Free &middot; Probably Fine</div>
+    <img class="hero__chainsaw" src="golden_chainsaw.png" alt="The Golden Chainsaw" title="hover to pause" />
+    <p class="hero__chainsaw-caption">hover to pause &middot; you have earned this moment of stillness</p>
     <h1 class="hero__title display">The <span>OTF</span> Archives</h1>
     <p class="hero__subtitle">
       Browse the Off-Topic Forum. Collect legendary treasures. Tell no one.<br>
@@ -424,7 +425,7 @@
   </div>
 </section>
 
-<!-- ── WHAT IS THIS ── -->
+<!-- WHAT IS THIS -->
 <section id="what">
   <div class="container">
     <p class="section-eyebrow">Classified briefing</p>
@@ -432,7 +433,6 @@
     <p class="what__intro">
       <strong>The OTF Archives</strong> is a browser extension that hides collectible treasures inside chess.com Off-Topic Forum topics. Browse as normal. Sometimes a treasure appears. Sometimes it doesn't. The lore is real. The treasures are not. Your parents won't understand.
     </p>
-
     <div class="what__grid">
       <div class="what__card">
         <div class="what__card-icon">🔍</div>
@@ -458,7 +458,7 @@
   </div>
 </section>
 
-<!-- ── TIERS ── -->
+<!-- TIERS -->
 <section id="tiers">
   <div class="container">
     <p class="section-eyebrow">Classified inventory</p>
@@ -488,99 +488,94 @@
   </div>
 </section>
 
-<!-- ── INSTALL ── -->
+<!-- INSTALL -->
 <section id="install">
   <div class="container">
     <p class="section-eyebrow">Sacred installation ritual</p>
     <h2 class="section-title display">Install in<br>4 steps.<br>(We counted.)</h2>
 
-    <div class="steps">
-
-      <div class="step">
-        <div class="step__num">1</div>
-        <div class="step__content">
-          <div class="step__title">Download the extension</div>
-          <div class="step__body">
-            Click the button below and save the <code>.zip</code> file somewhere you will remember. Your Downloads folder. Your Desktop. A folder called "definitely not a virus". Whatever works.
-            <br><br>
-            <a class="btn btn--primary" href="the-otf-archives-v0.4.0.zip" download>Download the-otf-archives-v0.4.0.zip</a>
-            <br>
-            <span class="step__note">It's small. Smaller than a photo of your lunch. You'll be fine.</span>
-          </div>
+    <div class="step">
+      <div class="step__num">1</div>
+      <div>
+        <div class="step__title">Download the extension</div>
+        <div class="step__body">
+          Click the button below and save the <code>.zip</code> file somewhere you will remember. Your Downloads folder. Your Desktop. A folder called &ldquo;definitely not a virus&rdquo;. Whatever works.
+          <br><br>
+          <a class="btn btn--primary" href="the-otf-archives-v0.5.0.zip" download>Download the-otf-archives-v0.5.0.zip</a>
+          <span class="step__note">It&rsquo;s small. Smaller than a photo of your lunch. You&rsquo;ll be fine.</span>
         </div>
       </div>
-
-      <div class="step">
-        <div class="step__num">2</div>
-        <div class="step__content">
-          <div class="step__title">Unzip it</div>
-          <div class="step__body">
-            Find the downloaded file and unzip it. On Mac: double-click. On Windows: right-click → <strong>Extract All</strong>. You should see a folder called <code>src</code> inside. That folder is the extension. Do not rename it. Do not move its contents around. It knows.
-            <span class="step__note">If you can't find where it downloaded, check your Downloads folder. It's always the Downloads folder.</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="step__num">3</div>
-        <div class="step__content">
-          <div class="step__title">Open Chrome Extensions</div>
-          <div class="step__body">
-            In Chrome, go to <code>chrome://extensions</code> in the address bar. You will see a toggle in the top right that says <strong>Developer mode</strong>. Turn it on. Chrome will look slightly different. This is normal. You are not in trouble.
-            <span class="step__note">Chrome may warn you that developer mode is on every time you open it. This is Chrome being dramatic. You can dismiss it.</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="step__num">4</div>
-        <div class="step__content">
-          <div class="step__title">Load the extension</div>
-          <div class="step__body">
-            Click <strong>Load unpacked</strong> in the top left. A file picker will appear. Navigate to where you unzipped the file and select the <code>src</code> folder inside it. Click <strong>Select</strong> (or <strong>Open</strong> on Windows).
-            <br><br>
-            The OTF Archives will appear in your extensions list. You'll see the icon in your Chrome toolbar. You're done. Go read the OTF. The lore awaits.
-            <span class="step__note">If the icon doesn't appear in the toolbar, click the puzzle piece 🧩 icon next to the address bar and pin it. Obviously.</span>
-          </div>
-        </div>
-      </div>
-
     </div>
+
+    <div class="step">
+      <div class="step__num">2</div>
+      <div>
+        <div class="step__title">Unzip it</div>
+        <div class="step__body">
+          Find the downloaded file and unzip it. On Mac: double-click. On Windows: right-click &rarr; <strong>Extract All</strong>. You should see a folder called <code>src</code> inside. That folder is the extension. Do not rename it. Do not move its contents around. It knows.
+          <span class="step__note">If you can&rsquo;t find where it downloaded, check your Downloads folder. It&rsquo;s always the Downloads folder.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step__num">3</div>
+      <div>
+        <div class="step__title">Open Chrome Extensions</div>
+        <div class="step__body">
+          In Chrome, go to <code>chrome://extensions</code> in the address bar. You will see a toggle in the top right that says <strong>Developer mode</strong>. Turn it on. Chrome will look slightly different. This is normal. You are not in trouble.
+          <span class="step__note">Chrome may warn you that developer mode is on every time you open it. This is Chrome being dramatic. You can dismiss it.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step__num">4</div>
+      <div>
+        <div class="step__title">Load the extension</div>
+        <div class="step__body">
+          Click <strong>Load unpacked</strong> in the top left. A file picker will appear. Navigate to where you unzipped the file and select the <code>src</code> folder inside it. Click <strong>Select</strong> (or <strong>Open</strong> on Windows).
+          <br><br>
+          The OTF Archives will appear in your extensions list. You&rsquo;ll see the icon in your Chrome toolbar. You&rsquo;re done. Go read the OTF. The lore awaits.
+          <span class="step__note">If the icon doesn&rsquo;t appear in the toolbar, click the puzzle piece 🧩 icon next to the address bar and pin it. Obviously.</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- ── HOW TO USE ── -->
+<!-- HOW TO USE -->
 <section id="use">
   <div class="container">
     <p class="section-eyebrow">Operational manual</p>
     <h2 class="section-title display">How to use it.<br>(You already know.)</h2>
-
     <ul class="rules__list">
       <li>Keep clicking topics</li>
       <li>The lore must grow</li>
       <li>Inb4thelock</li>
     </ul>
-
     <p class="rules__fine">
-      Some topics hide treasure. Each topic can reward you once per week. Older topics hide rarer treasure. Click the extension icon in your toolbar to see your collection. That's the whole game. There is no leaderboard. There is no winning. There is only the OTF.
+      Some topics hide treasure. Each topic can reward you once per week. Older topics hide rarer treasure. Click the extension icon in your toolbar to see your collection. That&rsquo;s the whole game. There is no leaderboard. There is no winning. There is only the OTF.
     </p>
   </div>
 </section>
 
-<!-- ── DISCLAIMER ── -->
+<!-- DISCLAIMER -->
 <section>
   <div class="container">
     <div class="disclaimer">
-      <strong>Important legal-ish notice:</strong> The OTF Archives is an unofficial fan project made by an OTFer, for OTFers. It is not affiliated with chess.com. Chess.com does not know it exists. If they ask, you didn't hear it from us. The extension collects zero data, contacts zero servers, and knows nothing about you. Your treasures live on your computer and go nowhere. They are yours. Cherish them. Or don't. We're a browser extension, not your mum.
+      <strong>Important legal-ish notice:</strong> The OTF Archives is an unofficial fan project made by an OTFer, for OTFers. It is not affiliated with chess.com. Chess.com does not know it exists. If they ask, you didn&rsquo;t hear it from us. The extension collects zero data, contacts zero servers, and knows nothing about you. Your treasures live on your computer and go nowhere. They are yours. Cherish them. Or don&rsquo;t. We&rsquo;re a browser extension, not your mum.
     </div>
   </div>
 </section>
 
-<!-- ── FOOTER ── */
+<!-- FOOTER -->
 <footer>
-  <div>⛓️ <strong style="color:#d9a534">The OTF Archives</strong> · v0.4.0 · The One That Actually Works (Probably)</div>
-  <div style="margin-top:8px">Made with love by <strong style="color:#f0f0f0">AwesomeAtti</strong> · An unauthorized passion project of questionable necessity.</div>
-  <div style="margin-top:8px; font-size:11px">Not affiliated with chess.com. They don't know we're here.</div>
+  <div>⛓️ <strong style="color:#d9a534">The OTF Archives</strong> &middot; v0.5.0 &middot; The One That Actually Works (Probably)</div>
+  <div style="margin-top:8px">Made with love by <strong style="color:#f0f0f0">AwesomeAtti</strong> &middot; Curated with chaos by <a href="https://www.chess.com/member/kaiserkatz" style="color:#f0f0f0">KaiserKatz</a></div>
+  <div style="margin-top:8px">An unauthorized passion project of questionable necessity.</div>
+  <div style="margin-top:8px; font-size:11px">Not affiliated with chess.com. They don&rsquo;t know we&rsquo;re here.</div>
 </footer>
 
 </body>
